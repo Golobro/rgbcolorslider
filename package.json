@@ -1,0 +1,16 @@
+{
+  "name": "js-color-slider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "Gologa Virobo",
+  "license": "ISC",
+  "homepage": "https://golobro.github.io/rgb-color-slider",
+  "dependencies": {
+    "gh-pages": "^2.0.0"
+  }
+}
