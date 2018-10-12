@@ -8,6 +8,10 @@ body{
     background: #e0e0e0;
 }
 
+header{
+    margin-bottom: 10px;
+}
+
 h1{
     text-align: center;
     color: #ffffff;
@@ -31,6 +35,10 @@ span:nth-child(3){
     margin: 0 auto;
 }
 
+main{
+    padding-bottom: 60px;
+}
+
 /* color display */
 #color-display{
     padding: 40px;
@@ -45,7 +53,6 @@ span:nth-child(3){
 }
 
 /* labels */
-
 label{
     padding: 10px;
     width: 50px;
@@ -120,16 +127,26 @@ input[type=number], label{
 /* icons */
 a{
     color: #ffffff;
+    transition: color 0.2s ease;
+}
+
+a:hover{
+    color: #cccccc;
 }
 
 /* footer */
 footer{
     background: #444444;
     position: absolute;
-    left: 0;
     bottom: 0;
-    padding: 20px 0;
+    padding: 14px 0;
     text-align: center;
     width: 100%;
     color: #ffffff;
+}
+
+@media (max-width: 700px){
+    .wrap{
+        width: 80%;
+    }
 }
