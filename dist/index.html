@@ -10,32 +10,35 @@
 </head>
 <body>
     <div class="wrap">
-        <h1> 
-            Vanilla Js <span>R</span><span>G</span><span>B</span> <br> Color Sliders by Gologa Virobo
-        </h1>
-        <br>
-        <div class="color-slider-wrap">
-            <div class="color-wrap">
-                <div id="color-display"></div>
+        <header>
+            <h1>
+                Vanilla Js <span>R</span><span>G</span><span>B</span> <br> Color Sliders by Gologa Virobo
+            </h1>
+        </header>
+        <main>
+            <div class="color-slider-wrap">
+                <div class="color-wrap">
+                    <div id="color-display"></div>
+                </div>
+                <div class="sliders">
+                    <div>
+                        <label for="red">Red</label>
+                        <input type="number" id="redNum">
+                        <input value="200" type="range" min="0" max="255" id="red">
+                    </div>
+                    <div>
+                        <label for="green">Green</label>
+                        <input type="number" id="greenNum">
+                        <input value="130" type="range" min="0" max="255" id="green">
+                    </div>
+                    <div>
+                        <label for="blue">Blue</label>
+                        <input type="number" id="blueNum">
+                        <input value="180" type="range" min="0" max="255" id="blue">
+                    </div>
+                </div>
             </div>
-            <div class="sliders">
-                <div>
-                    <label for="red">Red</label>
-                    <input type="number" id="redNum">
-                    <input value="200" type="range" min="0" max="255" id="red">
-                </div>
-                <div>
-                    <label for="green">Green</label>
-                    <input type="number" id="greenNum">
-                    <input value="130" type="range" min="0" max="255" id="green">
-                </div>
-                <div>
-                    <label for="blue">Blue</label>
-                    <input type="number" id="blueNum">
-                    <input  value="180" type="range" min="0" max="255" id="blue">
-                </div>
-            </div>
-        </div>
+        </main>
     </div>
     <footer> 
         <div class="icon-wrap">
@@ -43,7 +46,6 @@
                 <i class="fab fa-github fa-2x"></i>  
             </a>
         </div>
-        <br>
         Golobro &copy; 2018
     </footer>
     <script src="js/main.js"></script>
