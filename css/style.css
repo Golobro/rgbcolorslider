@@ -145,8 +145,16 @@ footer{
     color: #ffffff;
 }
 
+/* responsive width */
 @media (max-width: 700px){
     .wrap{
         width: 80%;
+    }
+}
+
+/* responsive height */
+@media (max-height: 600px){
+    footer{
+        position: relative;
     }
 }
