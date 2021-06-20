@@ -2,20 +2,22 @@
 function qs(selectEl){return document.querySelector(selectEl)}
 
 // select RGB inputs
-let red = qs('#red'), 
+const red = qs('#red'), 
 green = qs('#green'), 
 blue = qs('#blue') 
 
 // selet num inputs
-let redNumVal = qs('#redNum'), 
+const redNumVal = qs('#redNum'), 
 greenNumVal = qs('#greenNum'), 
 blueNumVal = qs('#blueNum')
 
+const hexcode_Preview = qs('#hexcode_render')
+
 // select Color Display
-let colorDisplay = qs('#color-display')
+const colorDisplay = qs('#color-display')
 
 // select labels
-let redLbl = qs('label[for=red]'), 
+const redLbl = qs('label[for=red]'), 
 greenLbl = qs('label[for=green]'), 
 blueLbl = qs('label[for=blue]')
 
@@ -25,7 +27,7 @@ function displayColors(){
 }
 
 // initial color val when DOM is loaded 
-function colorNumbrVals(){
+function initColorNumbrVals(){
     redNumVal.value = red.value
     greenNumVal.value = green.value
     blueNumVal.value = blue.value
@@ -38,20 +40,22 @@ function initSliderColors(){
     greenLbl.style.background = `rgb(0,${green.value},0)`
     blueLbl.style.background = `rgb(0,0,${blue.value})`
 
+    convertToHexcode(red.value, green.value, blue.value)
+
     // slider bg colors
-    sliderFill(red)
-    sliderFill(green)
-    sliderFill(blue)
+    setSliderFill(red)
+    setSliderFill(green)
+    setSliderFill(blue)
 }
 
 // Slider Fill offset
-function sliderFill(clr){
+function setSliderFill(clr){
     let val = (clr.value - clr.min) / (clr.max - clr.min)
     let percent = val * 100
 
     // clr input
     if(clr === red){
-        clr.style.background = `linear-gradient(to right, rgb(${clr.value},0,0) ${percent}%, #cccccc 0%)`    
+        clr.style.background = `linear-gradient(to right, rgb(${clr.value},0,0) ${percent}%, #cccccc 0%)`  
     } else if (clr === green) {
         clr.style.background = `linear-gradient(to right, rgb(0,${clr.value},0) ${percent}%, #cccccc 0%)`    
     } else if (clr === blue) {
@@ -59,14 +63,26 @@ function sliderFill(clr){
     }
 }
 
-// change range values by number input
-function changeRangeNumVal(){
-    btnValues(redNumVal, red)
-    btnValues(greenNumVal, green)
-    btnValues(blueNumVal, blue)
+function convertToHexcode(r, g, b){
+    let rHex = parseInt(r).toString(16)
+    let gHex = parseInt(g).toString(16)
+    let bHex = parseInt(b).toString(16)
+    renderHexCodesToUI(rHex, gHex, bHex)
 }
 
-function btnValues(btn, inputs){
+function renderHexCodesToUI(r, g, b){
+    hexcode_Preview.innerText = `#${r + g + b}`
+    hexcode_Preview.style.color = `#${r + g + b}`
+}
+
+// change range values by number input
+function changeRangeNumVal(){
+    validateBtnValues(redNumVal, red)
+    validateBtnValues(greenNumVal, green)
+    validateBtnValues(blueNumVal, blue)
+}
+
+function validateBtnValues(btn, inputs){
     // Validate number range
     btn.addEventListener('change', () => {
         // make sure numbers are entered between 0 to 255
@@ -99,23 +115,23 @@ function colorSliders(){
 function btnInputEvents(btn){
     btn.addEventListener('input', () => {
         displayColors()
-        colorNumbrVals()
+        initColorNumbrVals()
         initSliderColors()
         changeRangeNumVal()
     })
 }
 
-function init(){
+function initApp(){
     // init Colors controls
     colorSliders()
     // init display Colors
     displayColors()
     // init Color Vals
-    colorNumbrVals()
+    initColorNumbrVals()
     // init ColorSliderVals
     initSliderColors()
     // init Change Range Val
     changeRangeNumVal()
 }
 
-window.addEventListener('DOMContentLoaded', init)
+window.addEventListener('DOMContentLoaded', initApp)
