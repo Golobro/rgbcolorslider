@@ -1,24 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
-    font-family: sans-serif;
     background: #e0e0e0;
 }
 
 header{
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 h1{
-    text-align: center;
     color: #ffffff;
+    text-align: center;
     text-shadow: 0 1px 4px #888888;
 }
 
-/* RGB title */
+/* ====== RGB title ====== */
 span:nth-child(1){
     color: #ff0000;
 }
@@ -30,35 +32,41 @@ span:nth-child(3){
 }
 
 .wrap{
-    padding: 10px;
-    width: 500px;
+    width: 600px;
     margin: 0 auto;
+}
+
+#hexcode_render{
+    margin: 4px 0;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    text-shadow: 0 2px 1px #aaa;
 }
 
 main{
     padding-bottom: 60px;
 }
 
-/* color display */
+/* ====== Color Display ====== */
 #color-display{
-    padding: 40px;
-    box-shadow: 0 0 8px #aaaaaa;
+    padding: 30px;
     border-radius: 10px;
+    box-shadow: 0 0 8px #aaaaaa;
 }
 
 #color-display::before{
-    content: 'Move sliders to change Color or enter numbers between 0 to 255 in the number fields';
     color: #ffffff;
     text-shadow: 0 0 4px #333333;
+    content: 'Move sliders to change Color or enter numbers between 0 to 255 in the number fields';
 }
 
-/* labels */
+/* ====== Labels ====== */
 label{
-    padding: 10px;
-    width: 50px;
-    text-align: center;
-    color: #ffffff;
     margin: 4px;
+    width: 50px;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
     border-radius: 6px;
     box-shadow: inset 0 0 2px #333333;
 }
@@ -67,44 +75,44 @@ input[type=number], label{
     display: inline-block;
 }
 
-/* number input */
+/* ====== Number Input ====== */
 .sliders input[type=number]{
-    text-align: center;
     width: 50px;
-    padding: 10px 0 10px 10px;
-    background: #ffffff;
-    margin: 0 10px 0 4px;
     outline: none;
-    border: 2px solid transparent;
+    text-align: center;
     border-radius: 6px;
+    margin: 0 10px 0 4px;
+    background: #ffffff;
+    padding: 10px 0 10px 10px;
     transition: border 0.2s ease;
     box-shadow: 0 0 2px #333333;
+    border: 2px solid transparent;
 }
 
 .sliders input[type=number]:focus{
     border: 2px solid #508cfc;
 }
 
-/* color sliders */
+/* ====== Color Sliders ====== */
 .sliders{
+    padding: 6px;
     margin-top: 20px;
-    padding: 20px;
-    box-shadow: 0 0 8px #aaaaaa;
-    border: 1px solid #f4f4f4;
-    background: #f1f1f1;
     border-radius: 10px;
+    background: #f1f1f1;
+    border: 1px solid #f4f4f4;
+    box-shadow: 0 0 8px #aaaaaa;
 }
 
 .sliders div{
     padding: 4px;
 }
 
-/* range sliders */
+/* ====== Range Sliders ====== */
 .sliders input[type=range]{
     height: 8px;
-    border-radius: 10px;
-    outline: none;
     width: 100%;
+    outline: none;
+    border-radius: 10px;
     box-shadow: 0 0 2px #444444, inset 0 0 2px #444444;
 }
 
@@ -113,18 +121,18 @@ input[type=number], label{
     -webkit-appearance: none;
 } 
 
-/* slider thumb */
+/* ====== Slider Thumb ====== */
 .sliders input[type=range]::-webkit-slider-thumb{
-    height: 20px;
     width: 24px;
-    border-radius: 20%;
+    height: 20px;
     cursor: pointer;
+    border-radius: 20%;
     background: #cccccc;
     border: 2px solid #eeeeee;
     box-shadow: 0 0 4px #444444, inset 0 0 2px #444444;
 } 
 
-/* icons */
+/* ====== Icons ====== */
 a{
     color: #ffffff;
     transition: color 0.2s ease;
@@ -134,26 +142,28 @@ a:hover{
     color: #cccccc;
 }
 
-/* footer */
+/* ====== Footer ====== */
 footer{
-    background: #444444;
-    position: absolute;
     bottom: 0;
-    padding: 14px 0;
-    text-align: center;
     width: 100%;
+    padding: 12px 0;
     color: #ffffff;
+    position: absolute;
+    text-align: center;
+    background: #444444;
 }
 
-/* responsive width */
+/* ====== Responsive ====== */
 @media (max-width: 700px){
     .wrap{
         width: 80%;
     }
 }
 
-/* responsive height */
 @media (max-height: 600px){
+    main{
+        padding-bottom: 5px;
+    }
     footer{
         position: relative;
     }
