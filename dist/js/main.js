@@ -64,11 +64,18 @@ function setSliderFill(clr){
 }
 
 function convertToHexcode(r, g, b){
-    let rHex = parseInt(r).toString(16)
-    let gHex = parseInt(g).toString(16)
-    let bHex = parseInt(b).toString(16)
-    renderHexCodesToUI(rHex, gHex, bHex)
+    let rHex = parseInt(r)
+    let gHex = parseInt(g)
+    let bHex = parseInt(b)
+    renderHexCodesToUI(hexIt(rHex), hexIt(gHex), hexIt(bHex))
 }
+
+function hexIt(num){
+    hex = num.toString(16)
+    num < 16 ? hex = "0" + hex : 0
+    return hex
+}
+
 
 function renderHexCodesToUI(r, g, b){
     hexcode_Preview.innerText = `#${r + g + b}`
